@@ -1,0 +1,6 @@
+
+cpp partiitioner.
+how to use:
+	./partitioner (target def) (partitioning_size)
+	ex) ./partitioner des/des.def 8
+

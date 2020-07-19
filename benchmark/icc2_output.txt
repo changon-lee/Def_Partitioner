@@ -1,0 +1,57 @@
+
+set maindesign "des_des"
+des_des
+#1. create library, read designs and sdc
+#create_lib $maindesign -ref_libs tech/ng45nm.ndm -technology tech/ng45nmv.mw.tf
+create_lib $maindesign -ref_libs /home/KNUEEhdd1/itec401-7/ng45nm/tech/ng45nm.ndm -technology /home/KNUEEhdd1/itec401-7/ng45nm/tech/ng45nm.mw.tf
+Warning: ng45nm.mw.tf line 661, ContactCode 'via12' has undefined or zero-enclosures. (TECH-250)
+Warning: ng45nm.mw.tf line 676, ContactCode 'via23' has undefined or zero-enclosures. (TECH-250)
+Warning: ng45nm.mw.tf line 691, ContactCode 'via34' has undefined or zero-enclosures. (TECH-250)
+Warning: ng45nm.mw.tf line 706, ContactCode 'via45' has undefined or zero-enclosures. (TECH-250)
+Warning: ng45nm.mw.tf line 721, ContactCode 'via56' has undefined or zero-enclosures. (TECH-250)
+Warning: ng45nm.mw.tf line 736, ContactCode 'via67' has undefined or zero-enclosures. (TECH-250)
+Warning: ng45nm.mw.tf line 751, ContactCode 'via78' has undefined or zero-enclosures. (TECH-250)
+Warning: ng45nm.mw.tf line 766, ContactCode 'via89' has undefined or zero-enclosures. (TECH-250)
+Information: Loading technology file '/home/KNUEEhdd1/itec401-7/ng45nm/tech/ng45nm.mw.tf' (FILE-007)
+{des_des}
+{des_des}
+icc2_shell> read_verilog aes_partition_size_25/aes_all.v
+Loading verilog file '/home/KNUEEhdd1/itec401-7/stud2/cppPartitioner/benchmark/aes_partition_size_25/aes_all.v'
+Information: Reading Verilog into new design 'aes_aes' in library 'des_des'. (VR-012)
+Number of modules read: 26
+Top level ports: 388
+Total ports in all modules: 3184
+Total nets in all modules: 14220
+Total instances in all modules: 11177
+Elapsed = 00:00:00.12, CPU = 00:00:00.12
+1
+icc2_shell> write_def test.def
+Using libraries: des_des ng45nm
+Linking block des_des:aes_aes.design
+Information: User units loaded from library 'ng45nm' (LNK-040)
+Design 'aes_aes' was successfully linked.
+****************************************
+Report : Data Mismatches
+Version: O-2018.06-SP4
+Date   : Sun Jul 12 22:07:58 2020
+****************************************
+No mismatches exist on the design.
+---------------------------------------
+Number of Written DEF Constructs
+---------------------------------------
+VERSION                        : 1
+DIVIDERCHAR                    : 1
+BUSBITCHARS                    : 1
+DESIGN                         : 1
+UNITS                          : 1
+DIEAREA                        : 1
+COMPONENTS                     : 11152
+PINS                           : 388
+NETS                           : 11424
+1
+icc2_shell> exit
+Maximum memory usage for this session: 147.92 MB
+CPU usage for this session:      5 seconds (  0.00 hours)
+Elapsed time for this session:     55 seconds (  0.02 hours)
+Thank you for using IC Compiler II.
+

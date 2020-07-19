@@ -1,0 +1,36 @@
+#include "partitioner.h"
+#include "common.h"
+
+int main(int argc, char *argv[]){
+	if(argc < 3){
+		printf("Need def input file, partitioning size\n");
+		exit(0);
+	}
+	clock_t start,end;
+	start = clock();
+		
+	std::string deffile_name = argv[1];
+	int partition_size = atoi(argv[2]);
+
+	STR_LIST name_arr;
+	name_arr = split(deffile_name, ".");
+	std::string pure_name = name_arr[0];
+
+	std::string verilog_name = pure_name + "_converted.v";
+	EDGE_GRAPH graph;
+	STR_PAIR_LIST node_list;
+	PIN pin_list;
+	VERILOG_LIST v;
+
+	def_to_hgr(deffile_name,graph,node_list,pin_list);	
+	v = def_to_verilog(graph, node_list,pin_list, verilog_name);
+	
+	std::string hmetis_outfile_name = "aes/aes.hgr.part.4";
+
+	hgr_to_verilog(hmetis_outfile_name, graph, node_list, pin_list, v, partition_size);
+	 
+	end = clock();
+	double result = (double)(end - start);
+	printf("%.3f sec\n", result/CLOCKS_PER_SEC);
+}
+

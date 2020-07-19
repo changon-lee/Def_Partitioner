@@ -1,0 +1,10 @@
+#@ # 
+#@ # Running icc2_shell Version O-2018.06-SP4 for linux64 -- Nov 27, 2018
+#@ # Date:   Sun Jul 12 22:07:07 2020
+#@ # Run by: stud2@knuee-srv1.server
+#@ 
+
+source -echo -verbose tgbasic1.tcl
+read_verilog aes_partition_size_25/aes_all.v
+write_def test.def
+exit

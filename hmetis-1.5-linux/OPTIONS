@@ -1,0 +1,4 @@
+./hmetis aes/aes.hgr aes/aes.fix 2 5 (10~??) (1~5) (1~3) 3 (0~1) 24
+
+./hmetis aes/aes.hgr aes/aes.fix 2 5 20 1 1 3 0 24
+
